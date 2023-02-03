@@ -1,0 +1,19 @@
+<html>
+  <head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $.ajax({
+          url: "https://finance.yahoo.com/quote/SPY",
+          success: function(data) {
+            var stockPrice = $(data).find('span[data-reactid="14"]').text();
+            $("#spyPrice").text(stockPrice).css("color", "lightblue");
+          }
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="spyPrice"></div>
+  </body>
+</html>
